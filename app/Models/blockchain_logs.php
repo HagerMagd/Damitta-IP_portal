@@ -11,7 +11,7 @@ class blockchain_logs extends Model
     use HasFactory;
     protected $fillable=['id','research_id','transaction_hash','type'];
     public function research() {
-        return $this->belongsTo(blockchain_logs::class);
+        return $this->belongsTo(researche::class);
     }
 
 }
