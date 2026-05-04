@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('decisions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('research_id')->constrained('researches')->cascadeOnDelete();
-             $table->enum('result',['approve','reject']);
+             $table->enum('result',['approved','rejected','pending']);
             $table->timestamps();
             $table->unique(['research_id']);
         });

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class committee_member extends Model
+class CommitteeMember extends Model
 {
     /** @use HasFactory<\Database\Factories\CommitteeMemberFactory> */
     use HasFactory;

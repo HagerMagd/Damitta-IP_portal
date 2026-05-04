@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('committee_id')->nullable()->constrained('committees','id')->nullOnDelete();
             $table->foreignId('user_id')->constrained('users','id')->cascadeOnDelete();
             $table->string('hash',64)->unique();
+             $table->timestamps();
         });
     }
 

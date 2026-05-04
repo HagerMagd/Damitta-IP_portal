@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ethics_reviews extends Model
+class EthicsReviews extends Model
 {
     /** @use HasFactory<\Database\Factories\EthicsReviewsFactory> */
     use HasFactory;

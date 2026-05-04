@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\committee_member;
+use App\Models\committee;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +20,7 @@ class CommitteeMemberFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+           
         ];
     }
 }

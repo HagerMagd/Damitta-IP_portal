@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\decision;
+use App\Models\vote;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,11 +16,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $this->call([
+            SpecializationSeeder::class,
+            CommitteeSeeder::class,
+            RoleSeeder::class,
+            AdminSeeder::class,
+            UserSeeder::class,
+            ResearcheSeeder::class,
+            ResearchFilesSeeder::class,
+            DecisionSeeder::class,
+            VoteSeeder::class,
+            EthicsReviewsSeeder::class,
+            CommitteeMemberSeeder::class,
+            BlockchainLogsSeeder::class,
         ]);
     }
 }

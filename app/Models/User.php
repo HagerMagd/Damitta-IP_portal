@@ -26,6 +26,7 @@ class User extends Authenticatable
         'password',
         'role',
         'specialization_id',
+        'image_path',
 
     ];
 
@@ -59,14 +60,14 @@ class User extends Authenticatable
         return $this->hasMany(researche::class,);
     }
     public function ethics_reviews(){
-        return $this->hasMany(ethics_reviews::class,);
+        return $this->hasMany(EthicsReviews::class,);
     }
     public function votes(){
         return $this->hasMany(vote::class,);
     }
     public function committeememberes()
 {
-    return $this->hasMany(committee_member::class);
+    return $this->hasMany(CommitteeMember::class);
 }
 
 

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('role',["student", "committee_member", "ethics_member", "executive", "admin"]);
+            $table->string('image_path')->nullable();
             $table->foreignId('specialization_id')->nullable()->constrained('specializations')->nullOnDelete();
             $table->rememberToken();
             $table->timestamps();

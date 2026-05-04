@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\decision;
+use App\Models\researche;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,7 @@ class DecisionFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+        
         ];
     }
 }

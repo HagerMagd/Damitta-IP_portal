@@ -10,7 +10,7 @@ class researche extends Model
 {
     /** @use HasFactory<\Database\Factories\ResearcheFactory> */
     use HasFactory;
-     protected $fillable = ['id','title','desc','status','committee_id','user_id'];
+     protected $fillable = ['id','title','desc','status','committee_id','user_id','hash'];
     public function user(){
         return $this->belongsTo(User::class,);
     }
@@ -18,7 +18,7 @@ class researche extends Model
         return $this->belongsTo(committee::class,);
     }
     public function ethics_reviews(){
-        return $this->hasMany(ethics_reviews::class,);
+        return $this->hasMany(EthicsReviews::class,);
     }
     public function votes(){
         return $this->hasMany(vote::class,);
@@ -27,6 +27,9 @@ class researche extends Model
         return $this->hasOne(decision::class,);
     }
     public function blockchain_logs(){
-        return $this->hasMany(blockchain_logs::class,);
+        return $this->hasMany(BlockchainLogs::class,);
+    }
+    public function researchesfiles(){
+        return $this->hasMany(ResearchFile::class,);
     }
 }

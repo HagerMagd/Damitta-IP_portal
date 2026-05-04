@@ -2,18 +2,21 @@
 
 namespace Database\Seeders;
 
-
-use App\Models\researche;
+use App\Models\role;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ResearcheSeeder extends Seeder
+class RoleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-     researche::factory(25)->create();
+        role::create([
+            'role_name'=> 'admin',
+            'permissions'=>'users,Specialization,Committees,admins,committee_members',
+        ]);
+
     }
 }

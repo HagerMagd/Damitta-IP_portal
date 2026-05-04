@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('research_id')->constrained('researches')->cascadeOnDelete();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->text('comment')->nullable();
-            $table->enum('vote',['approve','reject']);
+            $table->enum('vote',['approved','rejected','pending']);
             $table->timestamps();
             $table->unique(['user_id','research_id']);
         });
