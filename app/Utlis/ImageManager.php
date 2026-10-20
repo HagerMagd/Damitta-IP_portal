@@ -37,14 +37,18 @@ class ImageManager{
         return Str::uuid() . '.' . $image->getClientOriginalExtension();
     }
 
-    public static function storeImageInLocal($image, $folder, $imageName)
-    {
-        return $image->storeAs(
-            $folder,
-            $imageName,
-            'uploads'
-        );
+public static function storeImageInLocal($image, $folder, $imageName)
+{
+    $folderPath = public_path($folder);
+
+    if (!File::exists($folderPath)) {
+        File::makeDirectory($folderPath, 0755, true);
     }
+
+    $image->move($folderPath, $imageName);
+
+    return $folder . '/' . $imageName;
+}
 
     public static function cheakimagelocal($image){
         if(File::exists(public_path($image))){
@@ -52,11 +56,11 @@ class ImageManager{
         }
     }
 
-    public static function deleteimage($imagePath){
-          if ($imagePath && Storage::disk('uploads')->exists($imagePath)) {
-        Storage::disk('uploads')->delete($imagePath);
-
-          }
+ public static function deleteimage($imagePath)
+{
+    if ($imagePath && File::exists(public_path($imagePath))) {
+        File::delete(public_path($imagePath));
+    }
 }
 
 }

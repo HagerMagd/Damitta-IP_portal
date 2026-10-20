@@ -36,7 +36,7 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-      
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
@@ -65,8 +65,11 @@ class RegisteredUserController extends Controller
             Auth::login($user);
             switch ($user->role) {
                 case 'student':
-         return redirect()->route('student.dashboard.home')
+                    return redirect()->route('student.dashboard.home')
                         ->with('success', 'Welcome to the Damietta University Intellectual Property Community');
+                 default:
+        return redirect('/');
+
             }
         } catch (\Throwable $th) {
 
@@ -74,7 +77,5 @@ class RegisteredUserController extends Controller
 
             return redirect()->back()->with('error', 'Please Try again !');
         }
-
-        
     }
 }

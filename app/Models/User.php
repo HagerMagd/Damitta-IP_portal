@@ -27,6 +27,7 @@ class User extends Authenticatable  implements MustVerifyEmail
         'email',
         'password',
         'role',
+        'status',
         'specialization_id',
         'image_path',
 
@@ -52,31 +53,46 @@ class User extends Authenticatable  implements MustVerifyEmail
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'status' => 'boolean',
         ];
     }
 
-    public function specialization(){
-        return $this->belongsTo(specialization::class,'specialization_id');
+    public function specialization()
+    {
+        return $this->belongsTo(specialization::class, 'specialization_id');
     }
-    public function researchs(){
+    public function researchs()
+    {
         return $this->hasMany(researche::class,);
     }
-    public function ethics_reviews(){
+    public function ethics_reviews()
+    {
         return $this->hasMany(EthicsReviews::class,);
     }
-    public function votes(){
+    public function votes()
+    {
         return $this->hasMany(vote::class,);
     }
-    public function committeememberes()
+   public function committeeMembers()
 {
-    return $this->hasMany(CommitteeMember::class);
+    return $this->hasMany(CommitteeMember::class, 'user_id');
 }
 
 
-    
-public function sendEmailVerificationNotification()
-{
-    $this->notify(new VerifyEmailNotification());
-}
 
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new VerifyEmailNotification());
+    }
+    public function committee()
+    {
+        return $this->hasOneThrough(
+            committee::class,
+            CommitteeMember::class,
+            'user_id',
+            'id',
+            'id',
+            'committee_id'
+        );
+    }
 }

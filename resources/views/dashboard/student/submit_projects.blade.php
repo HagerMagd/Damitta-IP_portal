@@ -3,7 +3,13 @@
 @section('title', 'Submit Project')
 
 @section('content')
-
+@if(auth()->user()->status == 'false')
+<div class="alert Warning">
+<i class="fa-solid fa-lock me-2"></i>
+Your account is currently restricted from submitting new ideas.
+You can browse the system and previous research.
+</div>
+@else
 <div class="submit-page">
 
     {{-- Page Header --}}
@@ -494,5 +500,7 @@
     </form>
 
 </div>
+@endif
+
 
 @endsection

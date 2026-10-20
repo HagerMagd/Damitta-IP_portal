@@ -31,7 +31,7 @@
                              @case('student')
                                <a href="{{ route('student.dashboard.home') }}" class="btn btn-outline">
                          Dashboard
-                     </a
+                               </a>
                                 
                              @break
 
@@ -42,10 +42,11 @@
                              @case('executive')
                                  <a href="{{ route('executive.dashboard.home') }}">Dashboard</a>
                              @break
+                               @case('admin')
+                                 <a href="{{ route('admin.dashboard.home') }}">Dashboard</a>
+                             @break
                          @endswitch
-                   >
-
-                     <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                        <form action="{{ route('logout') }}" method="POST" style="display:inline;">
                          @csrf
                          <button type="submit" class="btn btn-primary">
                              Logout

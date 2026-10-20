@@ -11,6 +11,6 @@ class ResearchFile  extends Model
     use HasFactory;
         protected $fillable = ['id','research_id','file_name','file_path','category'];
     public function research(){
-        return $this->belongsTo(researche::class,);
+        return $this->belongsTo(researche::class,'research_id');
     }
 }

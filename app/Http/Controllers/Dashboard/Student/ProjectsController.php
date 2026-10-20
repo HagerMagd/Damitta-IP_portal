@@ -34,6 +34,15 @@ class ProjectsController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
+         if (auth()->user()->status == 'false') {
+        return back()
+            ->withInput()
+            ->with(
+                'error',
+                'Your account is restricted from submitting new research.'
+            );
+    }
+
         DB::beginTransaction();
         try {
             $research = researche::create([

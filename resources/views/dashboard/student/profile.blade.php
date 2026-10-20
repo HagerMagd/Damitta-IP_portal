@@ -3,6 +3,10 @@
 @section('title', 'Student Profile Dashboard')
 
 @section('content')
+
+@php
+    use Illuminate\Support\Facades\Storage;
+@endphp
     @if (session('success'))
         <div class="alert alert-success">
 
@@ -11,20 +15,13 @@
         </div>
     @endif
     <div class="row g-4">
-
         <!-- Left Side -->
-        <div class="col-lg-4">
-
-            <div class="dashboard-card profile-card text-center">
-
-                <img src="{{ asset( 'storage/'. auth()->user()->image_path) }}" class="profile-image" alt="Profile">
-
-                <h3 class="mt-3">{{ auth()->user()->name }}</h3>
-
-                <span class="profile-role">{{auth()->user()->role}}</span>
-
-                <div class="profile-details mt-4">
-
+       <div class="col-lg-4">
+    <div class="dashboard-card profile-card text-center">
+        <img id="previewImage" src="{{ asset(auth()->user()->image_path) }}" class="preview-image" alt="Profile">
+        <h3 class="mt-3">{{ auth()->user()->name }}</h3>
+        <span class="profile-role">{{ auth()->user()->role }}</span>
+        <div class="profile-details mt-4">
                     <div class="detail-item">
                         <i class="fa-solid fa-envelope"></i>
                         <div>
@@ -136,14 +133,18 @@
 
                         </div>
 
-                        {{-- password  --}}
+                        <!-- {{-- password  --}} -->
                         <div class="col-md-6 mb-4">
 
                             <label class="form-label">New Password</label>
 
-                            <input type="password" name="password"
-                                class="form-control @error('password') is-invalid @enderror"
-                                placeholder="Update Your Password ">
+                           <input
+    type="password"
+    name="password"
+    class="form-control @error('password') is-invalid @enderror"
+    placeholder="Update Your Password"
+    autocomplete="new-password"
+>
                             @error('password')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -155,8 +156,13 @@
 
                             <label class="form-label">Confirm Password</label>
 
-                            <input type="password" name="password_confirmation" class="form-control"
-                                placeholder="Confirm Password">
+                           <input
+    type="password"
+    name="password_confirmation"
+    class="form-control"
+    placeholder="Confirm Password"
+    autocomplete="new-password"
+>
 
                         </div>
 
@@ -209,7 +215,7 @@
                                     <label for="imageInput" class="image-wrapper">
 
                                         <img id="previewImage"
-                                            src="{{ asset('storage/' . auth()->user()->image_path ?? asset('assets/images/admins/admin.jpg')) }}"
+                                            src="{{ Storage::disk('uploads')->url(auth()->user()->image_path) }}"
                                             class="preview-image" alt="Profile">
 
                                         <div class="camera-icon">

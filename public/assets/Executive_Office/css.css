@@ -1,0 +1,1626 @@
+/* =========================================================
+   DAMIETTA IP PORTAL
+   DASHBOARD HOME
+   ========================================================= */
+
+
+/* =========================
+   Root Variables
+========================= */
+
+:root {
+    --ip-primary: #0F4C81;
+    --ip-primary-light: #1B6CA8;
+    --ip-gold: #F4B400;
+
+    --ip-bg: #F8FAFC;
+    --ip-white: #FFFFFF;
+
+    --ip-text: #1F2937;
+    --ip-muted: #6B7280;
+
+    --ip-border: #E5E7EB;
+
+    --ip-success: #10B981;
+    --ip-warning: #F59E0B;
+    --ip-danger: #EF4444;
+
+    --ip-purple: #7C3AED;
+
+    --ip-shadow:
+        0 10px 30px rgba(15, 76, 129, 0.06);
+
+    --ip-shadow-hover:
+        0 16px 35px rgba(15, 76, 129, 0.11);
+
+    --ip-radius: 16px;
+
+    --ip-transition: all 0.25s ease;
+}
+
+
+/* =========================
+   Dashboard Body
+========================= */
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--ip-bg);
+    color: var(--ip-text);
+}
+
+
+/* =========================
+   Welcome Card
+========================= */
+
+.ip-welcome-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 210px;
+
+    margin-bottom: 28px;
+    padding: 35px 40px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--ip-primary),
+            var(--ip-primary-light)
+        );
+
+    box-shadow: var(--ip-shadow);
+
+    color: var(--ip-white);
+}
+
+
+.ip-welcome-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    left: -80px;
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+.ip-welcome-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: 28%;
+    top: -120px;
+
+    border-radius: 50%;
+
+    background: rgba(244, 180, 0, 0.08);
+}
+
+
+.ip-welcome-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+}
+
+
+.ip-welcome-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 13px;
+
+    margin-bottom: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.ip-welcome-badge i {
+    color: var(--ip-gold);
+}
+
+
+.ip-welcome-content h2 {
+    margin: 0 0 10px;
+
+    font-size: 28px;
+    font-weight: 800;
+
+    line-height: 1.4;
+}
+
+
+.ip-welcome-content p {
+    margin: 0;
+
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+.ip-welcome-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 125px;
+    height: 125px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    transform: rotate(-5deg);
+}
+
+
+.ip-welcome-icon i {
+    font-size: 62px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    transform: rotate(5deg);
+}
+
+
+/* =========================
+   Statistics Grid
+========================= */
+
+.ip-stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   Stat Card
+========================= */
+
+.ip-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    min-height: 125px;
+
+    padding: 22px;
+
+    background: var(--ip-white);
+
+    border: 1px solid rgba(229, 231, 235, 0.7);
+
+    border-radius: var(--ip-radius);
+
+    box-shadow: var(--ip-shadow);
+
+    transition: var(--ip-transition);
+}
+
+
+.ip-stat-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--ip-shadow-hover);
+}
+
+
+/* =========================
+   Stat Icons
+========================= */
+
+.ip-stat-icon {
+    flex-shrink: 0;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    font-size: 22px;
+}
+
+
+.ip-stat-icon.blue {
+    background: rgba(15, 76, 129, 0.1);
+    color: var(--ip-primary);
+}
+
+
+.ip-stat-icon.yellow {
+    background: rgba(244, 180, 0, 0.12);
+    color: #D59600;
+}
+
+
+.ip-stat-icon.light-blue {
+    background: rgba(27, 108, 168, 0.11);
+    color: var(--ip-primary-light);
+}
+
+
+.ip-stat-icon.green {
+    background: rgba(16, 185, 129, 0.11);
+    color: var(--ip-success);
+}
+
+
+.ip-stat-icon.red {
+    background: rgba(239, 68, 68, 0.10);
+    color: var(--ip-danger);
+}
+
+
+.ip-stat-icon.purple {
+    background: rgba(124, 58, 237, 0.10);
+    color: var(--ip-purple);
+}
+
+
+/* =========================
+   Stat Content
+========================= */
+
+.ip-stat-info {
+    min-width: 0;
+}
+
+
+.ip-stat-info span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--ip-muted);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.ip-stat-info h3 {
+    margin: 0 0 5px;
+
+    color: var(--ip-text);
+
+    font-size: 27px;
+    font-weight: 800;
+}
+
+
+.ip-stat-info small {
+    display: block;
+
+    color: var(--ip-muted);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+.ip-stat-info small.positive {
+    color: var(--ip-success);
+}
+
+
+.ip-stat-info small i {
+    margin-left: 3px;
+}
+
+
+/* =========================
+   Dashboard Grid
+========================= */
+
+.ip-dashboard-grid {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1.7fr) minmax(300px, 0.8fr);
+
+    gap: 24px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   Dashboard Card
+========================= */
+
+.ip-dashboard-card {
+    background: var(--ip-white);
+
+    border: 1px solid rgba(229, 231, 235, 0.7);
+
+    border-radius: 20px;
+
+    box-shadow: var(--ip-shadow);
+
+    overflow: hidden;
+}
+
+
+.ip-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 25px 25px 20px;
+}
+
+
+.ip-card-kicker {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--ip-primary-light);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+
+.ip-card-header h3 {
+    margin: 0;
+
+    color: var(--ip-text);
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+
+.ip-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--ip-primary);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: var(--ip-transition);
+}
+
+
+.ip-view-all:hover {
+    color: var(--ip-primary-light);
+
+    gap: 12px;
+}
+
+
+/* =========================
+   Dashboard Table
+========================= */
+
+.ip-dashboard-table {
+    margin: 0;
+}
+
+
+.ip-dashboard-table thead th {
+    padding: 13px 20px;
+
+    border-top: 1px solid var(--ip-border);
+    border-bottom: 1px solid var(--ip-border);
+
+    background: #FAFBFC;
+
+    color: var(--ip-muted);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+.ip-dashboard-table tbody td {
+    padding: 17px 20px;
+
+    border-bottom: 1px solid #F0F2F4;
+
+    color: #4B5563;
+
+    font-size: 12px;
+
+    vertical-align: middle;
+}
+
+
+.ip-dashboard-table tbody tr {
+    transition: var(--ip-transition);
+}
+
+
+.ip-dashboard-table tbody tr:hover {
+    background: #FBFDFF;
+}
+
+
+.ip-dashboard-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* =========================
+   Research Cell
+========================= */
+
+.ip-research-cell {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 220px;
+}
+
+
+.ip-research-icon {
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: rgba(15, 76, 129, 0.08);
+
+    color: var(--ip-primary);
+
+    font-size: 17px;
+}
+
+
+.ip-research-cell strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--ip-text);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    line-height: 1.5;
+}
+
+
+.ip-research-cell span {
+    display: block;
+
+    color: #9CA3AF;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   Status
+========================= */
+
+.ip-status {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 10px;
+
+    border-radius: 50px;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+.ip-status.pending {
+    background: rgba(244, 180, 0, 0.13);
+
+    color: #B77900;
+}
+
+
+.ip-status.review {
+    background: rgba(27, 108, 168, 0.11);
+
+    color: var(--ip-primary-light);
+}
+
+
+.ip-status.approved {
+    background: rgba(16, 185, 129, 0.11);
+
+    color: #059669;
+}
+
+
+.ip-status.rejected {
+    background: rgba(239, 68, 68, 0.10);
+
+    color: #DC2626;
+}
+
+
+/* =========================
+   Table Action
+========================= */
+
+.ip-table-action {
+    width: 31px;
+    height: 31px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #F4F7FA;
+
+    color: var(--ip-muted);
+
+    text-decoration: none;
+
+    transition: var(--ip-transition);
+}
+
+
+.ip-table-action:hover {
+    background: var(--ip-primary);
+
+    color: var(--ip-white);
+
+    transform: translateX(-3px);
+}
+
+
+/* =========================
+   Notifications
+========================= */
+
+.ip-notifications-list {
+    padding: 0 20px 10px;
+}
+
+
+.ip-dashboard-notification {
+    display: flex;
+    gap: 13px;
+
+    padding: 17px 5px;
+
+    border-bottom: 1px solid #F0F2F4;
+}
+
+
+.ip-dashboard-notification:last-child {
+    border-bottom: 0;
+}
+
+
+.ip-dashboard-notification.unread {
+    position: relative;
+}
+
+
+.ip-notification-icon {
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    font-size: 16px;
+}
+
+
+.ip-notification-icon.blue {
+    background: rgba(27, 108, 168, 0.10);
+    color: var(--ip-primary-light);
+}
+
+
+.ip-notification-icon.green {
+    background: rgba(16, 185, 129, 0.10);
+    color: var(--ip-success);
+}
+
+
+.ip-notification-icon.yellow {
+    background: rgba(244, 180, 0, 0.12);
+    color: #D59600;
+}
+
+
+.ip-notification-icon.purple {
+    background: rgba(124, 58, 237, 0.10);
+    color: var(--ip-purple);
+}
+
+
+.ip-notification-content {
+    min-width: 0;
+}
+
+
+.ip-notification-title {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 4px;
+}
+
+
+.ip-notification-title strong {
+    color: var(--ip-text);
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.notification-unread-dot {
+    width: 6px;
+    height: 6px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+
+    background: var(--ip-gold);
+}
+
+
+.ip-notification-content p {
+    margin: 0 0 5px;
+
+    color: var(--ip-muted);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+.ip-notification-content small {
+    color: #9CA3AF;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   Animation
+========================= */
+
+.ip-stat-card,
+.ip-dashboard-card,
+.ip-welcome-card {
+    animation: ipFadeUp 0.5s ease both;
+}
+
+
+@keyframes ipFadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 1200px) {
+
+    .ip-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ip-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .ip-welcome-card {
+        padding: 28px;
+
+        min-height: 180px;
+    }
+
+
+    .ip-welcome-content h2 {
+        font-size: 22px;
+    }
+
+
+    .ip-welcome-content p {
+        font-size: 12px;
+    }
+
+
+    .ip-welcome-icon {
+        width: 90px;
+        height: 90px;
+    }
+
+
+    .ip-welcome-icon i {
+        font-size: 42px;
+    }
+
+
+    .ip-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .ip-card-header {
+        padding: 20px;
+    }
+
+
+    .ip-dashboard-table thead th,
+    .ip-dashboard-table tbody td {
+        padding: 14px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .ip-welcome-card {
+        padding: 24px;
+    }
+
+
+    .ip-welcome-icon {
+        display: none;
+    }
+
+
+    .ip-welcome-content h2 {
+        font-size: 20px;
+    }
+
+
+    .ip-stat-card {
+        min-height: 105px;
+
+        padding: 18px;
+    }
+
+
+    .ip-stat-icon {
+        width: 50px;
+        height: 50px;
+
+        font-size: 19px;
+    }
+
+
+    .ip-stat-info h3 {
+        font-size: 23px;
+    }
+
+
+    .ip-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    .researches-card {
+        overflow-x: auto;
+    }
+
+
+    .ip-dashboard-table {
+        min-width: 850px;
+    }
+
+}
+/* =========================================================
+   EXECUTIVE OFFICE DASHBOARD
+   LAYOUT
+========================================================= */
+
+/* =========================
+   Main Dashboard Layout
+========================= */
+
+.dashboard {
+    min-height: 100vh;
+    background: var(--ip-bg);
+}
+
+.main-content {
+    min-height: 100vh;
+    margin-right: 270px;
+    display: flex;
+    flex-direction: column;
+    background: var(--ip-bg);
+}
+
+.page-content {
+    flex: 1;
+    padding: 30px 35px;
+}
+
+
+/* =========================
+   Sidebar
+========================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 270px;
+    height: 100vh;
+
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--ip-primary);
+    color: var(--ip-white);
+
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+
+    overflow-y: auto;
+}
+
+
+/* Sidebar Logo */
+
+.sidebar-logo {
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 20px 25px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-logo a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--ip-white);
+    text-decoration: none;
+}
+.user-profile-btn{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    border:none;
+    background:none;
+
+    cursor:pointer;
+}
+
+.user-avatar{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:#F4F7FA;
+    color:var(--ip-primary);
+}
+
+.user-info{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.user-info strong{
+    font-size:13px;
+}
+
+.user-info span{
+    font-size:11px;
+    color:var(--ip-muted);
+}
+
+.user-arrow{
+    color:var(--ip-muted);
+}
+.header-notification{
+    position:relative;
+}
+
+.notification-dot{
+    position:absolute;
+
+    width:9px;
+    height:9px;
+
+    top:9px;
+    left:9px;
+
+    border-radius:50%;
+
+    background:#EF4444;
+}
+.sidebar-link{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.sidebar-link-icon{
+    width:22px;
+    text-align:center;
+    font-size:16px;
+}
+
+.sidebar-link-text{
+    flex:1;
+}
+
+.sidebar-link-badge{
+    min-width:22px;
+    height:22px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50px;
+
+    background:var(--ip-gold);
+    color:#fff;
+
+    font-size:11px;
+    font-weight:bold;
+}
+.sidebar-bottom{
+    padding:20px;
+    margin-top:auto;
+    border-top:1px solid rgba(255,255,255,.15);
+}
+.sidebar-help{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.08);
+}
+
+.help-icon{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.12);
+
+    color:var(--ip-gold);
+}
+
+.sidebar-help strong{
+    display:block;
+    font-size:13px;
+}
+
+.sidebar-help small{
+    color:rgba(255,255,255,.7);
+    font-size:11px;
+}
+
+.logo-icon{
+    width:45px;
+    height:45px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.12);
+
+    color:var(--ip-gold);
+}
+
+.logo-text h5{
+    margin:0;
+    font-size:16px;
+    font-weight:800;
+}
+
+.logo-text span{
+    color:rgba(255,255,255,.7);
+    font-size:11px;
+}
+
+
+/* Sidebar Menu */
+
+.sidebar-nav{
+    flex:1;
+    padding:25px 15px;
+}
+
+.sidebar-nav .nav-section-title{
+    padding:0 12px;
+    margin-bottom:10px;
+    color:rgba(255,255,255,.45);
+    font-size:10px;
+    font-weight:700;
+}
+
+.sidebar-nav .sidebar-link{
+    display:flex;
+    align-items:center;
+    gap:13px;
+
+    padding:13px 15px;
+    margin-bottom:6px;
+
+    border-radius:12px;
+
+    color:rgba(255,255,255,.8);
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.sidebar-nav .sidebar-link:hover{
+    background:rgba(255,255,255,.1);
+    color:#fff;
+}
+
+.sidebar-nav .sidebar-link.active{
+    background:#fff;
+    color:var(--ip-primary);
+}
+
+.sidebar-link-icon{
+    width:22px;
+    text-align:center;
+}
+
+.sidebar-link-text{
+    flex:1;
+}
+
+.sidebar-link-badge{
+    min-width:22px;
+    height:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50px;
+
+    background:var(--ip-gold);
+    color:#fff;
+
+    font-size:11px;
+    font-weight:bold;
+}
+
+/* Sidebar Logout */
+
+.sidebar-footer {
+    padding: 15px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-footer a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 15px;
+
+    border-radius: 11px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: var(--ip-transition);
+}
+
+.sidebar-footer a:hover {
+    color: #fff;
+
+    background: rgba(239, 68, 68, 0.15);
+}
+
+.sidebar-footer a i {
+    width: 20px;
+    text-align: center;
+}
+
+
+/* =========================
+   Top Navbar
+========================= */
+
+.dashboard-header {
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 35px;
+
+    background: var(--ip-white);
+
+    border-bottom: 1px solid var(--ip-border);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 900;
+}
+
+
+/* Navbar Left */
+
+.header-title{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.header-title-info h1 {
+    margin: 0;
+
+    color: var(--ip-text);
+
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.navbar-page-info p {
+    margin: 0;
+
+    color: var(--ip-muted);
+
+    font-size: 11px;
+}
+
+
+/* Navbar Actions */
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+/* Notification */
+
+.notification-btn {
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--ip-border);
+    border-radius: 12px;
+
+    background: var(--ip-white);
+
+    color: var(--ip-muted);
+
+    text-decoration: none;
+
+    transition: var(--ip-transition);
+}
+
+.notification-btn:hover {
+    color: var(--ip-primary);
+
+    background: #F8FAFC;
+
+    border-color: rgba(15, 76, 129, 0.2);
+}
+
+.notification-btn .notification-count {
+    position: absolute;
+
+    top: -4px;
+    left: -4px;
+
+    min-width: 17px;
+    height: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2px 4px;
+
+    border-radius: 50px;
+
+    background: var(--ip-gold);
+
+    color: #fff;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    border: 2px solid #fff;
+}
+
+
+/* User Profile */
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 6px 10px 6px 6px;
+
+    border: 1px solid var(--ip-border);
+    border-radius: 14px;
+
+    background: var(--ip-white);
+
+    color: var(--ip-text);
+
+    text-decoration: none;
+
+    transition: var(--ip-transition);
+}
+
+.navbar-user:hover {
+    border-color: rgba(15, 76, 129, 0.2);
+
+    box-shadow: var(--ip-shadow);
+}
+
+.navbar-user-image {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: rgba(15, 76, 129, 0.1);
+
+    color: var(--ip-primary);
+
+    overflow: hidden;
+}
+
+.navbar-user-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.navbar-user-info {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 110px;
+}
+
+.navbar-user-info strong {
+    color: var(--ip-text);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.navbar-user-info span {
+    margin-top: 2px;
+
+    color: var(--ip-muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================
+   Breadcrumb
+========================= */
+
+.page-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 5px;
+
+    color: var(--ip-muted);
+
+    font-size: 10px;
+}
+
+.page-breadcrumb a {
+    color: var(--ip-primary);
+
+    text-decoration: none;
+}
+
+.page-breadcrumb i {
+    font-size: 8px;
+}
+
+
+/* =========================
+   Mobile Menu Button
+========================= */
+
+.mobile-menu-btn {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--ip-border);
+    border-radius: 10px;
+
+    background: #fff;
+
+    color: var(--ip-primary);
+}
+
+
+/* =========================
+   Mobile Sidebar Overlay
+========================= */
+
+.sidebar-overlay {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 999;
+
+    background: rgba(15, 23, 42, 0.45);
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+.dashboard-footer {
+    padding: 20px 35px;
+
+    background: var(--ip-white);
+
+    border-top: 1px solid var(--ip-border);
+
+    color: var(--ip-muted);
+
+    font-size: 10px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   Scrollbar
+========================= */
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 992px) {
+
+    .sidebar {
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-right: 0;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .sidebar-overlay.show {
+        display: block;
+    }
+
+    .top-navbar {
+        padding: 15px 20px;
+    }
+
+    .page-content {
+        padding: 25px 20px;
+    }
+
+    .dashboard-footer {
+        padding: 18px 20px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .top-navbar {
+        min-height: 68px;
+        padding: 12px 15px;
+    }
+
+    .navbar-page-info h1 {
+        font-size: 16px;
+    }
+
+    .navbar-page-info p {
+        display: none;
+    }
+
+    .navbar-user-info {
+        display: none;
+    }
+
+    .navbar-user {
+        padding: 4px;
+        border: none;
+    }
+
+    .notification-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .page-content {
+        padding: 20px 15px;
+    }
+
+}

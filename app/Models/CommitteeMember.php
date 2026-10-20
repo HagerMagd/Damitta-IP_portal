@@ -17,6 +17,6 @@ class CommitteeMember extends Model
 
     public function committee()
     {
-        return $this->belongsTo(committee::class);
+        return $this->belongsTo(committee::class,'committee_id');
     }
 }

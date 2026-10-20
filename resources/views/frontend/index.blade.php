@@ -11,7 +11,7 @@ Damietta IP Portal
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text fade-in-up">
-                    <h1 class="hero-title">Secure Your Intellectual Work on the Blockchain</h1>
+                    <h1 class="hero-title">Secure Your Intellectual Work on the Blockchain </h1>
                     <p class="hero-subtitle">A University Platform for Recording Verifying Graduation Projects & Research with Blockchain Technology</p>
                     <button class="btn btn-hero">Submit Now</button>
                 </div>

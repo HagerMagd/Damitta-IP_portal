@@ -27,9 +27,9 @@ class researche extends Model
         return $this->hasOne(decision::class,'research_id');
     }
     public function blockchain_logs(){
-        return $this->hasMany(BlockchainLogs::class,);
+        return $this->hasMany(BlockchainLogs::class,'research_id');
     }
     public function researchesfiles(){
-        return $this->hasMany(ResearchFile::class,);
+        return $this->hasMany(ResearchFile::class,'research_id');
     }
 }

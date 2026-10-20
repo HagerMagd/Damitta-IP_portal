@@ -35,7 +35,7 @@
 
         <div class="profile">
 
-            <img src="{{ asset('storage/'.auth()->user()->image_path)}}">
+            <img src="{{ asset(auth()->user()->image_path)}}">
 
             <div>
 

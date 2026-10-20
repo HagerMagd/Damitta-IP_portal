@@ -37,6 +37,8 @@ class AuthenticatedSessionController extends Controller
                 return redirect()->route('ethics.dashboard.home');
             case 'executive':
                 return redirect()->route('executive.dashboard.home');
+                case 'admin':
+                return redirect()->route('admin.dashboard.home');
         }
     }
     /**
